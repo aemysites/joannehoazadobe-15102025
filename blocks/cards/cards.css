@@ -28,109 +28,6 @@
 }
 
 
-.cards.cards19 {
-  background: #fff;
-  padding: 0;
-}
-
-.cards.cards19 ul {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px 40px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  background: #fff;
-  background-color: #fff;
-}
-
-@media (width <= 1024px) {
-  .cards.cards19 ul {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px 24px;
-  }
-}
-
-@media (width <= 600px) {
-  .cards.cards19 ul {
-    grid-template-columns: 1fr;
-    gap: 18px 0;
-  }
-}
-
-.cards.cards19 li {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  background: #fff;
-  border: none;
-  margin: 0;
-  padding: 12px 0;
-  min-width: 0;
-  box-sizing: border-box;
-}
-
-.cards.cards19 ul li {
-  padding-left: 0;
-  padding-right: 0;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.cards.cards19 li .cards-card-body:first-of-type {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin-right: 12px;
-  padding: 0;
-  min-width: 24px;
-  max-width: 24px;
-}
-
-.cards.cards19 li .cards-card-body:first-of-type img {
-  width: 24px;
-  height: 24px;
-  min-width: 24px;
-  min-height: 24px;
-  max-width: 24px;
-  max-height: 24px;
-  display: block;
-  object-fit: contain;
-  vertical-align: top;
-  filter: grayscale(1) brightness(0.18) contrast(1.2);
-}
-
-.cards.cards19 li .cards-card-body:last-of-type {
-  display: flex;
-  align-items: flex-start;
-  padding: 0;
-  min-width: 0;
-  flex: 1 1 auto;
-  word-wrap: break-word;
-}
-
-.cards.cards19 li .cards-card-body:last-of-type p {
-  margin: 0;
-  color: #222;
-  font-size: 14px;
-  line-height: 1.5;
-  text-align: left;
-  word-break: normal;
-  overflow-wrap: break-word;
-}
-
-.cards.cards19 li .cards-card-body p {
-  margin: 0;
-}
-
-.cards.cards19 li,
-.cards.cards19 li .cards-card-body {
-  background: none;
-  border: none;
-  box-shadow: none;
-}
-
-
 .cards ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -141,7 +38,7 @@
 }
 
 .cards ul li {
-  display: flex; /* horizontal layout for image and text */
+  display: flex;
   background: #fff;
   border-radius: 20px;
   padding: 20px;
@@ -170,7 +67,6 @@
 }
 
 .cards-card-body p:first-child {
-  /* Style for the label and reading time */
   font-size: 12px;
   color: #444;
   background: #f6f6f6;
@@ -182,7 +78,6 @@
 }
 
 .cards-card-body p:nth-child(2) strong {
-  /* Title */
   font-size: 22px;
   color: #232323;
   letter-spacing: 0.03em;
@@ -192,7 +87,6 @@
 }
 
 .cards-card-body p:nth-child(3) {
-  /* Description */
   font-size: 15px;
   color: #444;
   margin-top: 8px;
@@ -200,7 +94,6 @@
 }
 
 .cards-card-body .button-container a {
-  /* Read link */
   color: #444;
   font-weight: bold;
   font-size: 15px;
@@ -231,4 +124,107 @@
     margin-right: 0;
     margin-bottom: 16px;
   }
+}
+
+
+.cards.cards19 {
+  background: var(--background-color);
+  padding: 0;
+}
+
+/* Responsive grid with large, airy gaps */
+.cards.cards19 ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 56px 72px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background: transparent;
+}
+
+@media (width <= 900px) {
+  .cards.cards19 ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 36px;
+  }
+}
+
+@media (width <= 600px) {
+  .cards.cards19 ul {
+    grid-template-columns: 1fr;
+    gap: 20px 0;
+  }
+}
+
+/* Each card: flex row for icon and text, no background/border */
+.cards.cards19 li {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+/* Icon container: flex row, visually center icon for multiline text, tight gap */
+.cards.cards19 .cards-card-body:first-of-type {
+  display: flex;
+  align-items: flex-start;
+  margin-right: 6px;
+  margin-top: 2px; /* Optically center icon to text block */
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+/* Icon image: fixed size, no background, optically centered */
+.cards.cards19 .cards-card-body img {
+  width: 20px;
+  height: 20px;
+  display: block;
+  object-fit: contain;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  vertical-align: middle;
+}
+
+/* Remove background/pill and padding from all text containers */
+.cards.cards19 .cards-card-body {
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+/* Text container: flex, align with icon, fill space */
+.cards.cards19 .cards-card-body:last-of-type {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  min-width: 0;
+  background: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+/* Text: small, left, dark, regular weight, tight, no background */
+.cards.cards19 .cards-card-body p {
+  color: #222;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
 }
